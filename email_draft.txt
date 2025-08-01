@@ -1,0 +1,93 @@
+=== EMAIL DRAFT TEMPLATE ===
+
+Subject: Receipt from Walmart
+To: [your-email@gmail.com]
+From: [your-email@gmail.com]
+
+Body:
+Hi,
+
+Please find attached the receipt from my recent Walmart purchase.
+
+Thanks!
+
+[Attach the PDF receipt file]
+
+=== EMAIL DRAFT TEMPLATE 2 ===
+
+Subject: Shell Gas Receipt
+To: [your-email@gmail.com]
+From: [your-email@gmail.com]
+
+Body:
+Hi,
+
+Please find attached the receipt from Shell gas station.
+
+Thanks!
+
+[Attach the PDF receipt file]
+
+=== EMAIL DRAFT TEMPLATE 3 ===
+
+Subject: Amazon Order Confirmation
+To: [your-email@gmail.com]
+From: [your-email@gmail.com]
+
+Body:
+Hi,
+
+Please find attached the receipt from my Amazon purchase.
+
+Thanks!
+
+[Attach the PDF receipt file]
+
+=== HOW TO USE THESE DRAFTS ===
+
+1. Open your email client (Gmail, Outlook, etc.)
+2. Create a new email
+3. Use one of the templates above
+4. Attach a PDF receipt file
+5. Send the email to yourself
+6. Go to your application and click "Process Emails"
+
+=== PDF RECEIPT CONTENT TO USE ===
+
+Copy this content and save it as a PDF file:
+
+RECEIPT
+
+Store: Walmart
+Date: 2024-01-15
+Time: 14:30
+
+Items:
+- Groceries: $45.99
+- Tax: $3.68
+- Total: $49.67
+
+Payment Method: Credit Card
+Card: **** **** **** 1234
+
+Thank you for your purchase!
+Visit us at www.walmart.com
+
+=== ALTERNATIVE RECEIPT ===
+
+RECEIPT
+
+Store: Shell Gas Station
+Date: 2024-01-16
+Time: 09:15
+
+Items:
+- Gas (Regular): $25.50
+- Tax: $2.04
+- Total: $27.54
+
+Payment Method: Credit Card
+Card: **** **** **** 5678
+
+Thank you for your purchase!
+Visit us at www.shell.com 
