@@ -51,9 +51,16 @@ const EmailSettings = () => {
   const processEmail = async () => {
     setTesting(true);
     try {
-      const response = await axios.post('/api/email/process-here-is-receipt-fixed');
-      if (response.data.success) {
-        alert(`✅ ${response.data.message}\n\nAdded $15.98 Walmart receipt to the ledger!`);
+      // Check if email config is complete
+      if (!emailConfig.email || !emailConfig.password || !emailConfig.host || !emailConfig.port) {
+        alert('❌ Please fill in all email configuration fields before processing emails.');
+        setTesting(false);
+        return;
+      }
+
+      const response = await axios.post('/api/email/process', emailConfig);
+      if (response.data.message) {
+        alert(`✅ ${response.data.message}\n\nProcessed ${response.data.emails?.length || 0} emails with receipts!`);
         // Refresh stats
         fetchData();
       }
@@ -191,7 +198,7 @@ const EmailSettings = () => {
             </li>
             <li className="flex items-center space-x-2">
               <span className="text-green-500">✓</span>
-              <span>Click "Process Email" to add the $15.98 Walmart receipt to the ledger</span>
+              <span>Click "Process Email" to read all emails and extract receipt data from PDF attachments</span>
             </li>
           </ul>
         </div>

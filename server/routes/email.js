@@ -6,16 +6,16 @@ const { runQuery, getRow, getAll } = require('../database/database');
 // Process new emails manually
 router.post('/process', async (req, res) => {
   try {
-    const { user, password, host, port } = req.body;
+    const { email, password, host, port } = req.body;
     
-    if (!user || !password || !host || !port) {
+    if (!email || !password || !host || !port) {
       return res.status(400).json({ 
         error: 'Missing email configuration parameters' 
       });
     }
     
     const emailService = new EmailService({
-      user,
+      user: email,
       password,
       host,
       port
@@ -53,15 +53,20 @@ router.post('/process', async (req, res) => {
 // Test email connection
 router.post('/test-connection', async (req, res) => {
   try {
-    const { user, password, host, port } = req.body;
+    const { email, password, host, port } = req.body;
     
-    if (!user || !password || !host || !port) {
+    if (!email || !password || !host || !port) {
       return res.status(400).json({ 
         error: 'Missing email configuration parameters' 
       });
     }
     
-    const emailService = new EmailService({ user, password, host, port });
+    const emailService = new EmailService({ 
+      user: email, 
+      password, 
+      host, 
+      port 
+    });
     await emailService.connect();
     
     res.json({ 
