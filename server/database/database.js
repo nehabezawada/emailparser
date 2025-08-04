@@ -1,8 +1,15 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const fs = require('fs');
+
+// Ensure data directory exists
+const dataDir = path.join(__dirname, '../../data');
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 
 // Database file path
-const dbPath = path.join(__dirname, '../../data/receipts.db');
+const dbPath = path.join(dataDir, 'receipts.db');
 
 // Create database connection
 const db = new sqlite3.Database(dbPath, (err) => {
@@ -106,7 +113,7 @@ function getRow(sql, params = []) {
   });
 }
 
-// Helper function to get multiple rows
+// Helper function to get all rows
 function getAll(sql, params = []) {
   return new Promise((resolve, reject) => {
     db.all(sql, params, (err, rows) => {
@@ -123,6 +130,5 @@ module.exports = {
   db,
   runQuery,
   getRow,
-  getAll,
-  initDatabase
+  getAll
 }; 

@@ -15,11 +15,18 @@ RUN cd client && npm install
 # Copy source code
 COPY . .
 
+# Create data directory
+RUN mkdir -p data
+
 # Build the React app
 RUN cd client && npm run build
 
 # Expose port
 EXPOSE 3001
+
+# Set environment variables
+ENV NODE_ENV=production
+ENV PORT=3001
 
 # Start the server
 CMD ["npm", "start"] 
